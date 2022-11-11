@@ -1,6 +1,6 @@
 import React from 'react'
 import { useForm } from 'react-hook-form'
-import { FORMS1, FORMS2} from './FormulariosArray';
+import { FORMS1, FORMS2 } from './FormulariosArray';
 import { Container1, H2, LabelForm, InputForm, Container2, TextareaForm, ButtonForm, Container3, Fail } from './ComponentsStyles';
 
 
@@ -22,10 +22,10 @@ return (
         
         <Container1>
             {FORMS1.map((form) =>(
-                <LabelForm key={(form.id)}>
+                <LabelForm key={form.id}>
                     <label>{form.label}</label>
                     <InputForm type='text' {...register(form.tipo, {required:true})} />
-                    {errors.form.tipo.type !== undefined ? <Fail>El campo no puede estar vacio</Fail> : null} 
+                    {(errors[form.tipo]?.type ==="required") && <Fail>El campo no puede estar vacio</Fail>}
                 </LabelForm>
             ))}
         </Container1>
