@@ -2,6 +2,7 @@ import React from 'react'
 import { useForm } from 'react-hook-form'
 import { FORMS1, FORMS2 } from './FormulariosArray';
 import { Container1, H2, LabelForm, InputForm, Container2, TextareaForm, ButtonForm, Container3, Fail } from './ComponentsStyles';
+import swal from 'sweetalert';
 
 
 
@@ -9,7 +10,7 @@ const FormList = () => {
     const {register, handleSubmit, formState:{errors}} = useForm();
 
     const customSubmit = (data) =>{
-        alert("Carga exitosa")
+        swal("Carga exitosa", "Aprieta el boton para continuar", "success");
         console.log(data)
     }
     
