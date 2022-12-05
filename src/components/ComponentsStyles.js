@@ -1,5 +1,9 @@
 import styled from "styled-components";
 
+export const FormContainerGeneral = styled.form`
+
+` 
+
 export const H2 = styled.h2`
 display: flex;
 align-items: center;
@@ -28,6 +32,7 @@ padding: 3px;
 
 export const Container2 = styled.div`
 height: 800px;
+width: auto;
 display: flex;
 flex-direction: column;
 justify-content: space-evenly;
@@ -37,11 +42,16 @@ margin-top: 30px;
 `
 
 export const TextareaForm = styled.textarea`
+width: 100%;
 height: 100px;
 border-radius: 5px;
 border-color: #e5e5e5;
 font-size: medium;
 padding: 6px;
+
+@media (min-width: 765px){
+    width: auto;
+}
 
 `
 
@@ -63,7 +73,20 @@ border-radius: 7px;
 border: #eb5e28 ;
 background-color: #eb5e28;
 color: white;
+&:hover{
+    background-color:#dc2f02;
+}
 `
 export const Fail = styled.small`
 color: red
+`
+
+export const FormControl = styled(Container2)`
+    justify-content: center;
+    align-items: center;
+    margin: 30px;
+`
+
+export const FormList = styled.form`
+    margin: 1rem 0;
 `
