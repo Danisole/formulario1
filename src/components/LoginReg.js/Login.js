@@ -1,21 +1,23 @@
 import React from 'react'
 import { useForm } from 'react-hook-form'
-import { InputForm, LabelForm, Fail, Container3, ButtonForm, FormControl, FormList } from '../ComponentsStyles';
+import { InputForm, LabelForm, Fail, Container3, ButtonForm, FormControl, FormList } from '../Form/ComponentsStyles';
 import swal from 'sweetalert';
+
+
 
 
 const Login = () => {
 
+    
+
     const {register, handleSubmit, formState:{errors}, reset} = useForm();
 
     const onSubmit = (data) =>{
-      swal("Carga exitosa", "Aprieta OK para continuar", "success");
-      console.log(data);
+      swal(`Bienvenido usuario ${data.nombre}`, "Aprieta OK para continuar", "success");
+      console.log(data.nombre);
       reset();
 
   }
-
-
 
   return (
       <FormControl>
@@ -36,8 +38,10 @@ const Login = () => {
             </LabelForm>
 
             <Container3>
-                <ButtonForm type="submit">Guardar</ButtonForm>
+                <ButtonForm type="submit">Ingresar</ButtonForm>
             </Container3>  
+
+            
 
           </FormList>
           

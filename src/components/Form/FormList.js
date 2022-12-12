@@ -1,6 +1,6 @@
 import React from 'react'
 import { useForm } from 'react-hook-form'
-import { FORMS1, FORMS2 } from './data/FormulariosArray';
+import { FORMS1, FORMS2 } from '../data/FormulariosArray';
 import { Container1, H2, LabelForm, InputForm, Container2, TextareaForm, ButtonForm, Container3, Fail } from './ComponentsStyles';
 import swal from 'sweetalert';
 
@@ -48,6 +48,8 @@ const FormList = () => {
         </Container3>            
         
     </form>
+
+    <ButtonForm>Salir</ButtonForm>
     </>
     
   )
