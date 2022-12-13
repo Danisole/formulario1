@@ -51,6 +51,6 @@ export const FORMS2 =[
         label:"Evol. Area Terapia Ocupacional", 
         tipo:"neuroPsico",
         id:10
-    },
+    }
 
 ]

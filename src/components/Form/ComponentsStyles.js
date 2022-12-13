@@ -92,8 +92,18 @@ export const FormControl = styled(Container2)`
     justify-content: center;
     align-items: center;
     
+    
 `
 
 export const FormList = styled.form`
     margin: 1rem 0;
+`
+
+export const ContainerForm = styled.div`
+    width: 100%;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
 `

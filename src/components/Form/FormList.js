@@ -1,8 +1,9 @@
 import React from 'react'
 import { useForm } from 'react-hook-form'
 import { FORMS1, FORMS2 } from '../data/FormulariosArray';
-import { Container1, H2, LabelForm, InputForm, Container2, TextareaForm, ButtonForm, Container3, Fail } from './ComponentsStyles';
+import { ContainerForm, Container1, H2, LabelForm, InputForm, Container2, TextareaForm, ButtonForm, Container3, Fail } from './ComponentsStyles';
 import swal from 'sweetalert';
+import { Link } from 'react-router-dom';
 
 
 
@@ -19,37 +20,39 @@ const FormList = () => {
 
     return (
     <>
-    <H2>Formulario de registro</H2>
-    
-    <form onSubmit={handleSubmit(customSubmit)}>
-        
-        <Container1>
-            {FORMS1.map((form) =>(
-                <LabelForm key={form.id}>
-                    <label>{form.label}</label>
-                    <InputForm type='text' {...register(form.tipo, {required:true})} />
-                    {(errors[form.tipo]?.type ==="required") && <Fail>El campo no puede estar vacio</Fail>}
-                </LabelForm>
-            ))}
-        </Container1>
+        <ContainerForm>
+            <H2>Formulario de registro</H2>
+            
+            <form onSubmit={handleSubmit(customSubmit)}>
+                
+                <Container1>
+                    {FORMS1.map((form) =>(
+                        <LabelForm key={form.id}>
+                            <label>{form.label}</label>
+                            <InputForm type='text' {...register(form.tipo, {required:true})} />
+                            {(errors[form.tipo]?.type ==="required") && <Fail>El campo no puede estar vacio</Fail>}
+                        </LabelForm>
+                    ))}
+                </Container1>
 
-        <Container2>
-            {FORMS2.map((form) =>(
-                <LabelForm>
-                    <label>{form.label}</label>
-                    <TextareaForm type='text' {...register(form.tipo, {})}/>
-                </LabelForm>
-            ))}
-        </Container2>
+                <Container2>
+                    {FORMS2.map((form) =>(
+                        <LabelForm>
+                            <label>{form.label}</label>
+                            <TextareaForm type='text' {...register(form.tipo, {})}/>
+                        </LabelForm>
+                    ))}
+                </Container2>
 
-        <Container3>
-            <ButtonForm type="submit">Guardar</ButtonForm>
-            <ButtonForm>PDF</ButtonForm>
-        </Container3>            
-        
-    </form>
+                <Container3>
+                    <ButtonForm type="submit">Guardar</ButtonForm>
+                    <ButtonForm>PDF</ButtonForm>
+                </Container3>            
+                
+            </form>
 
-    <ButtonForm>Salir</ButtonForm>
+            <ButtonForm><Link to="/" style={{color: "white", textDecoration:"none"}}>Volver</Link></ButtonForm>
+        </ContainerForm>    
     </>
     
   )

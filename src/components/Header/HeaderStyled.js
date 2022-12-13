@@ -6,20 +6,26 @@ export const HeaderContainer = styled.header`
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    background-color: #001d3d;
+    background-color: #00296b;
     padding: 0 30px;
     
     margin-top: 0;
 
+`
 
-    a{
-        color: #fff;
-        font-size: 16px;
-        font-weight: 600;
-        text-decoration: none;
-
-        &:hover{
-            text-decoration: underline;
-        }
+export const BtnHeader = styled.button`
+     width: 100px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    border-radius: 4px;
+    border: #003566 ;
+    background-color: #fff;
+    color: black;
+    font-weight: 600;
+    &:hover{
+        background-color:#84bcda;
     }
 `
