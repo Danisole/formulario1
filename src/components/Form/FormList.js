@@ -1,22 +1,39 @@
-import React from 'react'
+import React, { useState, useEffect} from 'react'
 import { useForm } from 'react-hook-form'
 import { FORMS1, FORMS2 } from '../data/FormulariosArray';
 import { ContainerForm, Container1, H2, LabelForm, InputForm, Container2, TextareaForm, ButtonForm, Container3, Fail } from './ComponentsStyles';
 import swal from 'sweetalert';
-import { Link } from 'react-router-dom';
-
+import { Link,useNavigate  } from 'react-router-dom';
+import { apiUserCartilla } from '../../service/ApiRest';
 
 
 const FormList = () => {
+
+    const navigate = useNavigate();
+    
+    useEffect(()=>{
+
+        const getToken = localStorage.getItem("token");
+        console.log(getToken)
+
+        if(getToken === undefined){
+
+        navigate("/")
+        }
+
+    },[])
+
+
     const {register, handleSubmit, formState:{errors}, reset} = useForm();
 
-    const customSubmit = (data) =>{
-        swal("Carga exitosa", "Aprieta OK para continuar", "success");
-        console.log(data);
-        reset();
+    const customSubmit = async(data) =>{
 
+        const dataForm = data
+
+        console.log(dataForm)
+
+        reset();
     }
-    
 
     return (
     <>
